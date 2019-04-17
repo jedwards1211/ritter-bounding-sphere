@@ -2,7 +2,7 @@
 
 import { it } from 'mocha'
 import { expect, assert } from 'chai'
-import bounds, { type Point, type Sphere } from '../src'
+import bounds, { type Point } from '../src'
 
 it('returns NaN for zero points', () => {
   expect(bounds([])).to.deep.equal([NaN, NaN, NaN, NaN])
@@ -14,6 +14,12 @@ it('returns zero radius for one point', () => {
 
 it('uses two points as diameter', () => {
   expect(bounds([[0, 0, 0], [1, 1, 1]])).to.deep.equal([0.5, 0.5, 0.5, 0.75])
+})
+
+it('writes to output argument if given', () => {
+  const sphere = []
+  bounds([[0, 0, 0], [1, 1, 1]], sphere)
+  expect(sphere).to.deep.equal([0.5, 0.5, 0.5, 0.75])
 })
 
 it("third point obviously inside sphere doesn't expand it", () => {
