@@ -1,7 +1,5 @@
 // @flow
 
-import assert from 'assert'
-
 export type Point = [number, number, number]
 export type Sphere = [number, number, number, number]
 

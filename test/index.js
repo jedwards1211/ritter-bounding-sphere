@@ -17,7 +17,7 @@ it('uses two points as diameter', () => {
 })
 
 it('writes to output argument if given', () => {
-  const sphere = []
+  const sphere = [0, 0, 0, 0]
   bounds([[0, 0, 0], [1, 1, 1]], sphere)
   expect(sphere).to.deep.equal([0.5, 0.5, 0.5, 0.75])
 })
