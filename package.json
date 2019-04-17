@@ -1,7 +1,7 @@
 {
-  "name": "es2015-library-skeleton",
+  "name": "ritter-bounding-sphere",
   "version": "0.0.0-development",
-  "description": "my personal ES2015 library project skeleton",
+  "description": "compute bounding sphere for a set of points using Jack Ritter's algorithm",
   "main": "index.js",
   "module": "es/index.js",
   "sideEffects": false,
@@ -65,17 +65,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jedwards1211/es2015-library-skeleton.git"
+    "url": "https://github.com/jedwards1211/ritter-bounding-sphere.git"
   },
   "keywords": [
-    "es2015"
+    "bounding",
+    "sphere",
+    "spatial",
+    "spatial",
+    "indexing",
+    "geometry",
+    "sphere",
+    "point",
+    "cloud",
+    "3d"
   ],
   "author": "Andy Edwards",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jedwards1211/es2015-library-skeleton/issues"
+    "url": "https://github.com/jedwards1211/ritter-bounding-sphere/issues"
   },
-  "homepage": "https://github.com/jedwards1211/es2015-library-skeleton#readme",
+  "homepage": "https://github.com/jedwards1211/ritter-bounding-sphere#readme",
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
