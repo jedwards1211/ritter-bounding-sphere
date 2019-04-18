@@ -68,16 +68,13 @@
     "url": "https://github.com/jedwards1211/ritter-bounding-sphere.git"
   },
   "keywords": [
-    "bounding",
-    "sphere",
-    "spatial",
-    "spatial",
-    "indexing",
+    "3d",
+    "bounding sphere",
     "geometry",
-    "sphere",
-    "point",
-    "cloud",
-    "3d"
+    "point cloud",
+    "spatial indexing",
+    "spatial",
+    "sphere"
   ],
   "author": "Andy Edwards",
   "license": "MIT",
@@ -117,7 +114,7 @@
     "prettier": "^1.15.2",
     "prettier-eslint": "^8.8.2",
     "rimraf": "^2.6.0",
-    "semantic-release": "^15.1.4"
+    "semantic-release": "^15.13.3"
   },
   "dependencies": {},
   "renovate": {
