@@ -3,10 +3,7 @@
 export type Point = [number, number, number]
 export type Sphere = [number, number, number, number]
 
-module.exports = function ritterBoundingSphere(
-  points: Iterable<Point>,
-  sphere?: Sphere
-): Sphere {
+function looseBoundingSphere(points: Iterable<Point>, sphere?: Sphere): Sphere {
   function result(x: number, y: number, z: number, r2: number): Sphere {
     if (!sphere) return [x, y, z, r2]
     sphere[0] = x
@@ -87,12 +84,30 @@ module.exports = function ritterBoundingSphere(
       x = point[0] - dx * factor
       y = point[1] - dy * factor
       z = point[2] - dz * factor
-      // make the radius just a tad bigger to ensure that prior points are still
-      // inside sphere despite floating point error
-      r *= 1.0000000001
       rsq = r * r
     }
   }
 
   return result(x, y, z, rsq)
 }
+
+function strictBoundingSphere(
+  points: Iterable<Point>,
+  sphere?: Sphere
+): Sphere {
+  sphere = looseBoundingSphere(points, sphere)
+  for (let point of points) {
+    const dx = point[0] - sphere[0]
+    const dy = point[1] - sphere[1]
+    const dz = point[2] - sphere[2]
+    const dsq = dx * dx + dy * dy + dz * dz
+    if (dsq > sphere[3]) sphere[3] = dsq
+  }
+  return sphere
+}
+strictBoundingSphere.loose = looseBoundingSphere
+
+module.exports = (strictBoundingSphere: {
+  (points: Iterable<Point>, sphere?: Sphere): Sphere,
+  loose(points: Iterable<Point>, sphere?: Sphere): Sphere,
+})
