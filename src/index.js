@@ -32,7 +32,9 @@ function looseBoundingSphere(points: Iterable<Point>, sphere?: Sphere): Sphere {
   let iterator = points[Symbol.iterator]()
   let { value: point, done } = iterator.next()
   if (done) return result(NaN, NaN, NaN, NaN)
-  ;[x0, y0, z0] = point
+  x0 = point[0]
+  y0 = point[1]
+  z0 = point[2]
 
   // find point x1 farthest from x0
   while ((({ value: point, done } = iterator.next()), !done)) {

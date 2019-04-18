@@ -13,6 +13,11 @@ https://en.wikipedia.org/wiki/Bounding_sphere#Ritter's_bounding_sphere
 Ritter's algorithm is very simple and efficient, but gives only a coarse result
 which is usually 5% to 20% larger than the optimum.
 
+## Compatibility
+
+`ritter-bounding-sphere` requires `Symbol.iterator` to be supported.
+It definitely works in Node 8+, but older environments may require a polyfill.
+
 ## `require('ritter-bounding-sphere')(points, [output])`
 
 Computes a bounding sphere for `points`, which must be an
