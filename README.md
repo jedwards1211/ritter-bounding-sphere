@@ -21,8 +21,8 @@ It definitely works in Node 8+, but older environments may require a polyfill.
 ## `require('ritter-bounding-sphere')(points, [output])`
 
 Computes a bounding sphere for `points`, which must be an
-`Iterable<[x, y, z]>`. The iterator can mutate and return the
-same array instance if desired.
+`Iterable<[x, y, z]>`. The iterator can mutate and yield the
+same array instance more than once if desired.
 
 Returns the bounding sphere as an array of the form `[x, y, z, radiusSquared]`
 where `x, y, z` is the center. You can pass the `output` array to store the
